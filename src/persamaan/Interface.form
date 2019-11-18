@@ -42,6 +42,13 @@
               <Component id="LabelMutasi" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
           </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="buttonStart" min="-2" pref="85" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="buttonStop" min="-2" pref="85" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+          </Group>
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
@@ -63,19 +70,12 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="TextResult" min="-2" pref="365" max="-2" attributes="0"/>
                           <Component id="txPersamaan" min="-2" pref="365" max="-2" attributes="0"/>
+                          <Component id="TextResult" min="-2" pref="365" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
               <EmptySpace pref="37" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="buttonStart" min="-2" pref="85" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="buttonStop" min="-2" pref="85" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
@@ -110,9 +110,9 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="txPersamaan" min="-2" pref="41" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="LabelMutasi" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="LabelCross" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -162,15 +162,6 @@
           <Font name="sansserif" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="PERSAMAAN"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txPersamaan">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="sansserif" size="18" style="0"/>
-        </Property>
-        <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="1a+2b+3c+4d=30"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JSlider" name="SliderCross">
@@ -269,6 +260,15 @@
           <Font name="sansserif" size="18" style="0"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txPersamaan">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="sansserif" size="18" style="0"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="1a+2b+3c+4d=30"/>
       </Properties>
     </Component>
   </SubComponents>

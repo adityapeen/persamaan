@@ -63,12 +63,9 @@ public class Process {
     
     public static double HitungTotalFitness(Chromosome[] pop){
         double total=0;
-        for(int i=0;i<pop.length;i++){
-            total += pop[i].GetFitness();
+        for (Chromosome pop1 : pop) {
+            total += pop1.GetFitness();
         }
-//        for (Chromosome pop1 : pop) {
-//            total += pop1.GetFitness();
-//        }
 //        System.out.println("total fitness "+total);
         total=format(total);
         return total;
@@ -203,35 +200,6 @@ public class Process {
         return hasil;
     }
     
-    public static double[] getMax(double[] fitness) {
-        double maxValue = fitness[0];
-        double index = 0;
-        double[] hasil = new double[2];
-        for (int i = 1; i < fitness.length; i++) {
-            if (fitness[i] > maxValue) {
-                maxValue = fitness[i];
-                index = i;
-            }
-        }
-        hasil[0] = maxValue;
-        hasil[1] = index;
-        return hasil;
-    }
-    
-    public static double[] getMin(double[] fitness) {
-        double minValue = fitness[0];
-        double index = 0;
-        double[] hasil = new double[2];
-        for (int i = 1; i < fitness.length; i++) {
-            if (fitness[i] < minValue) {
-                minValue = fitness[i];
-                index = i;
-            }
-        }
-        hasil[0] = minValue;
-        hasil[1] = index;
-        return hasil;
-    }
     
     public static void SetEq(String[] equation){
         int[] temp = new int[equation.length];

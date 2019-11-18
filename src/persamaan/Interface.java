@@ -47,7 +47,6 @@ public class Interface extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        txPersamaan = new javax.swing.JTextField();
         SliderCross = new javax.swing.JSlider();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -62,6 +61,7 @@ public class Interface extends javax.swing.JFrame {
         TextGenerasi = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         TextResult = new javax.swing.JTextField();
+        txPersamaan = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Persamaan");
@@ -73,10 +73,6 @@ public class Interface extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         jLabel1.setText("PERSAMAAN");
-
-        txPersamaan.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        txPersamaan.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txPersamaan.setText("1a+2b+3c+4d=30");
 
         SliderCross.setValue(25);
         SliderCross.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -138,6 +134,10 @@ public class Interface extends javax.swing.JFrame {
         TextResult.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         TextResult.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
+        txPersamaan.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        txPersamaan.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txPersamaan.setText("1a+2b+3c+4d=30");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -148,6 +148,12 @@ public class Interface extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(LabelMutasi)
                 .addGap(104, 104, 104))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(buttonStart, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(buttonStop, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -165,15 +171,9 @@ public class Interface extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TextResult, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txPersamaan, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txPersamaan, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TextResult, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(37, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(buttonStart, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(buttonStop, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(17, 17, 17)
@@ -200,9 +200,9 @@ public class Interface extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txPersamaan, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67)
+                .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelMutasi)
                     .addComponent(LabelCross))
@@ -277,7 +277,7 @@ public class Interface extends javax.swing.JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             if(generasi[best].GetFitness()!=1){
-                System.out.println("\n\t\tGENERASI KE-"+iterasi);
+                System.out.println("\n\tGENERASI KE-"+iterasi);
                 System.out.println("======POPULASI AWAL=======");
                 Process.HitungProbabilitas(generasi,prob);
                 tampilkan(generasi);
@@ -319,7 +319,7 @@ public class Interface extends javax.swing.JFrame {
             }
             else {
                 Evolusi.stop();
-                System.out.println("Proses Selesai");
+                System.out.println("\nProses Selesai");
                 
                 System.out.println("----------------------------------------");
                 System.out.print(" Persamaan >>");
@@ -338,16 +338,6 @@ public class Interface extends javax.swing.JFrame {
     });
     
     
-    private void SliderCrossStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_SliderCrossStateChanged
-        // TODO add your handling code here:
-        UpdateRatio();
-    }//GEN-LAST:event_SliderCrossStateChanged
-
-    private void SliderMutasiStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_SliderMutasiStateChanged
-        // TODO add your handling code here:
-        UpdateRatio();
-    }//GEN-LAST:event_SliderMutasiStateChanged
-
     private void buttonStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonStartActionPerformed
         // TODO add your handling code here:
         iterasi=0;
@@ -380,6 +370,16 @@ public class Interface extends javax.swing.JFrame {
     private void TextGenerasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextGenerasiActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TextGenerasiActionPerformed
+
+    private void SliderMutasiStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_SliderMutasiStateChanged
+        // TODO add your handling code here:
+        UpdateRatio();
+    }//GEN-LAST:event_SliderMutasiStateChanged
+
+    private void SliderCrossStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_SliderCrossStateChanged
+        // TODO add your handling code here:
+        UpdateRatio();
+    }//GEN-LAST:event_SliderCrossStateChanged
 
     /**
      * @param args the command line arguments
